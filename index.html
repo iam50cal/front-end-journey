@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <title>Front End Journey</title>
+</head>
+
+<body>
+    <header class="container-fluid m-1 p-2">
+        <div class="row">
+            <div class="col-2 d-flex justify-content-start  ">
+                <img src="Black White Modern Handwritten Square Studio Logo.svg" class="logo" alt="">
+            </div>
+
+            <nav class="col-10 d-flex flex-column justify-content-center align-items-end ">
+                <ul class="d-flex align-items-center gap-3 list-unstyled m-1 p-1">
+                    <li><img src="Untitled design.svg" alt=""></li>
+                    <li><img src="threads.svg" alt=""></li>
+                    <li><img src="linkein.svg" alt=""></li>
+                </ul>
+                <div>
+                    <button  class="btn btn-secondary" id="signInButton">
+                        Sign In
+                    </button>
+                    <button  class="btn btn-secondary" id="signOutButton">
+                        Sign Out
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="row d-flex justify-content-center p-1">
+        <section class="col-11 foto">
+        </section>
+        <section class="col-11 p-3 m-3">
+            <h1>Welcome To Front End Journey</h1>
+        </section>
+        <div class="col-11" id="message">
+            <p class=""> You are signed in as <span id="userName"></span> </p>
+        </div>
+        <section class="border col-11 p-3 m-3">
+            <h3>
+                Follow me on my path to becoming a front end developer
+            </h3>
+            <p>
+                I am eager to share my journey with you all as I transition from my current role in IT as a support
+                analyst into web development as a front end developer.
+                I understand the journey will be a significant challenge. I am prepared for each and every challenge.
+                My experience in IT has allowed me to hone problem solving abilities and technical proficiency on the
+                go.
+            </p>
+            <p>
+                Learning the intricacies of HTML, CSS, JavaScript, and mastering the art of crafting engaging user
+                interfaces
+                will require dedication and continuous learning. The dynamic nature of web technologies means staying
+                current with evolving trends and frameworks, which adds another layer of complexity to this journey.
+                Despite the challenges, I am determined to embrace the learning curve, leveraging my existing skills to
+                fuel my passion for creating visually captivating and functional web experiences as I strive to complete
+                this journey.
+
+            </p>
+            <p>
+                I am unsure what this blog/ site may evolve to. I am hoping it can be a place of motivation for others
+                thay may find
+                themselves in a situation like mine. I hope to document enough information to help others when they are
+                feeling stuck or lost,
+                I hope it can be a place where anyone can come and discuss where they currently find themselves on their
+                own journey...
+            </p>
+            <h4>With that said, Welcome! Let's code!</h4>
+        </section>
+        <hr>
+        <section class="col-11 p-3 m-3">
+            <h4>First a quick overview of the primary technologies you will learn and use!</h4>
+            <hr>
+            <h4 class="border-bottom border-info p-1">HTML & CSS</h4>
+            <p class="p-3 m-3">
+                <strong>HTML & CSS</strong> are two essential technologies you will be using in front-end development.
+                HTML and CSS
+                go hand in hand. <strong>HTML</strong>(Hypertext Markup Language) is a markup language you will use to
+                structure your
+                the content on your website/webapp. HTML uses tags to allow you to define your elements. These elements
+                can be images, links,
+                paragraphs, list and many more. The browser looks at these tags as instructions on how it should display
+                content.
+            </p>
+            <p class="p-3 m-3">
+                <strong>CSS</strong>(Cascading Style Sheets) is a stylesheet language that we use to define the layout
+                and appeareance
+                of our HTML elements. CSS allows us to apply styles to our HTML like changing colors, positioning, fonts
+                and many other styles
+                to our HTML elements.
+                This is where things start to get fun early on in your journey as you'll start seeing your projects to
+                look as you want.
+                You will learn to use layout systems like <strong>Grid & Flexbox</strong> which allow you to position
+                elemnents as you desire.
+                I recomend expermenting and building plenty of layouts when you reach this point, these two click after
+                consitent practice, at least
+                that was my case.
+            </p>
+            <p class="p-3 m-3"">
+                This is just a very brief overview of these two technologies. There are plenty of resources online for you dive in and start learning 
+                building of these two technologies alone. Later on I will create a post listing a few resources I have used.
+            </p>
+        </section>
+        <hr>
+    </div>
+
+<!-- GOOGLE AUTH SCRIPT -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-app.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+
+            import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-auth.js";
+
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+                apiKey: "AIzaSyB7HdGC5bu7NgLHqWzo70Ylk8Cfj7ryheM",
+                authDomain: "front-end-journey.firebaseapp.com",
+                projectId: "front-end-journey",
+                storageBucket: "front-end-journey.appspot.com",
+                messagingSenderId: "106193827879",
+                appId: "1:106193827879:web:978ce645d3ba41d535b602"
+            };
+
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth();
+            const provider = new GoogleAuthProvider();
+            const signInButton = document.getElementById('signInButton');
+            const signOutButton = document.getElementById('signOutButton')
+            const userName = document.getElementById('userName')
+            signOutButton.style.display = "none";
+
+            const userSignIn = async () => {
+                signInWithPopup(auth, provider)
+                    .then((result) => {
+                        const user = result.user
+                        console.log(user);
+                    }).catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message
+                    })
+            }
+
+            const userSignOut = async () => {
+                signOut(auth).then(() => {
+                    alert('You have signed out!')
+                })
+            }
+
+            onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    signOutButton.style.display = "inline";
+                    signInButton.style.display = "none";
+                    message.style.display = "block";
+                    userName.innerText = user.displayName;
+                    userName.style.color = "#0DCAF0"
+                } else {
+                    signOutButton.style.display = "none";
+                    signInButton.style.display = "inline";
+                    message.style.display = "none";
+                }
+            })
+
+            signInButton.addEventListener('click', userSignIn);
+            signOutButton.addEventListener('click', userSignOut);
+      </script>
+      <!-- END -->
+</body>
+
+</html>

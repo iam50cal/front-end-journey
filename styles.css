@@ -1,0 +1,19 @@
+body {
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+.foto {
+background-image: url('/photo-1605379399843-5870eea9b74e.jpg');
+background-size: cover;
+height: 450px;
+}
+
+.logo {
+    height: 150px;
+    width: 150px;
+    
+}
+p {
+    line-height: 1.5em;
+    font-size: 1.4rem;
+}
